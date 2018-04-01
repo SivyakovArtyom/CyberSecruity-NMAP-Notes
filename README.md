@@ -91,4 +91,34 @@ Generally slower and difficult. UDP scans work by sending a UDP packet to every 
 ### Protocol scanning
     nmap [ip] -sO -v
 
-PORT SPECIFICATION:
+## PORT SPECIFICATION, SERVICE, VERSION & OS DETECTION
+### Port range
+    nmap [ip] -v -p 21-1000
+    nmap [ip] -p-65535 -v
+    nmap [ip] -p0- -v
+    nmap [ip] -v --top-ports 2000
+    
+### Port excluding
+    nmap [ip] -v --top-ports 2000 --exclude-ports 80,21,5353,139-9000
+    
+### Port with protocol
+    nmap [ip] -v -p U: 53, 111, 137, 5353, T:21-25, 80, 139, 8080 -sU -sS
+
+### Port with name of the service(s)
+    nmap [ip] -v -p http,https,ftp
+    
+### Port scan. Fast
+    nmap [ip] -v -F
+    
+### Service and version detection
+    nmap [ip] -v -F
+
+
+
+
+
+
+
+
+
+
